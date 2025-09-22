@@ -1,9 +1,17 @@
-const Person = require('./person');
-const pathDemo = require('./reference/path_demo');
-const myLogger = require('./logger');
-const person1 = new Person('John', 30);
+const http = require('http');
+const path = require('path');
+const fs = require('fs');
 
-person1.greeting();
-pathDemo();
+const server = http.createServer((req, res) => {
+  if (req.url === '/') {
+    fs.readFile(path.join(__dirname, 'index.html'), (err, content) => {
+      if(err) throw err;
+      res.writeHead(200, { 'Content-Type': 'text/html' });
+      res.end(content);
+    });
+  }
+});
 
-myLogger.log('Hi');
+const PORT = process.env.PORT || 5100;
+
+server.listen(PORT, () => console.log(`Server running on: ${PORT}`));

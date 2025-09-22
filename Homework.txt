@@ -1,0 +1,1 @@
+1. Use the Event emitter to  catch some uuid and a message and append that to a file that would keep all logs
