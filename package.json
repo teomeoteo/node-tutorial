@@ -16,10 +16,10 @@
     "url": "https://github.com/teomeoteo/node-tutorial/issues"
   },
   "homepage": "https://github.com/teomeoteo/node-tutorial#readme",
-  "dependencies": {
-    "uuid": "^13.0.0"
-  },
   "devDependencies": {
     "nodemon": "^3.1.10"
+  },
+  "dependencies": {
+    "uuid": "^7.0.3"
   }
 }
